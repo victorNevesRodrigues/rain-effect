@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.imgContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(./assets/img/rain3.jpg);
+    background-size: cover;
+    animation: color-change 2s linear infinite;
+}
+
+.imgContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/img/rain.png);
+    animation: rain 0.3s linear infinite;
+}
+
+@keyframes color-change {
+    0%, 100% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(360deg);
+    }
+    
+}
+
+@keyframes rain {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 20% 100%;
+    }
+}
